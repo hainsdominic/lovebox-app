@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { CssBaseline, Container, Typography } from '@material-ui/core';
+import FavoriteIcon from '@material-ui/icons/Favorite';
 import { makeStyles } from '@material-ui/core/styles';
 
 import MessageForm from './components/MessageForm';
