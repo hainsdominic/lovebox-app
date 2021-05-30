@@ -1,8 +1,8 @@
 # Lovebox Client
 
 A client for my fork of @Julisa99's [Lovebox DIY Project](https://github.com/julisa99/Lovebox)
-Enter the box name, the box password and your message in the simple form to write the message in the Firebase Realtime Database.  
-The box will then fetch the new message using Firebase's REST API.
+
+Enter the box's name, the box password and your message in the simple form to write the message in the Firebase Realtime Database. The box will then fetch the new message using the Firebase REST API.
 
 To run, create a file named config.js in src/config
 Fill it with your firebase information:
@@ -27,7 +27,7 @@ This object has two properties:
 - Message: The string that will be displayed on the box.
 - password: The SHA-512 hash of the box's password.
 
-i.e., your databse will look like this in JSON:
+i.e., your database will look like this in JSON:
 
 ```
 {
