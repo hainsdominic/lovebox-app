@@ -3,9 +3,27 @@ import sha512 from 'js-sha512';
 
 import { useForm, Controller } from 'react-hook-form';
 import { TextField, Grid, Button, Paper } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
 
-import useStyles from '../styles';
 import { db } from '../config/firebase';
+
+const useStyles = makeStyles((theme) => ({
+  form: {
+    margin: theme.spacing(1),
+  },
+  formField: {
+    margin: theme.spacing(1),
+  },
+  sumbitBtn: {
+    margin: theme.spacing(2),
+  },
+  formPaper: {
+    margin: theme.spacing(7, 'auto'),
+    padding: theme.spacing(2),
+    width: '100%',
+    maxWidth: theme.spacing(40),
+  },
+}));
 
 const MessageForm = () => {
   const classes = useStyles();

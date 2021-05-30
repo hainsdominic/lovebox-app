@@ -1,10 +1,16 @@
 import React from 'react';
 
 import { CssBaseline, Container, Typography } from '@material-ui/core';
-
-import useStyles from './styles';
+import { makeStyles } from '@material-ui/core/styles';
 
 import MessageForm from './components/MessageForm';
+
+const useStyles = makeStyles((theme) => ({
+  container: {
+    margin: theme.spacing(10),
+    textAlign: 'center',
+  },
+}));
 
 function App() {
   const classes = useStyles();
@@ -14,7 +20,7 @@ function App() {
       <CssBaseline />
       <div className={classes.container}>
         <Container>
-          <Typography variant='h1' gutterBottom>
+          <Typography variant='h3' gutterBottom>
             {'Lovebox <3'}
           </Typography>
           <Typography variant='h5' gutterBottom>
