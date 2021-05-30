@@ -2,7 +2,47 @@
 
 A client for my fork of @Julisa99's [Lovebox DIY Project](https://github.com/julisa99/Lovebox)
 Enter the box name, the box password and your message in the simple form to write the message in the Firebase Realtime Database.  
-The both will then fetch the new message using Firebase's REST API.
+The box will then fetch the new message using Firebase's REST API.
+
+To run, create a file named config.js in src/config
+Fill it with your firebase information:
+
+```
+export const config = {
+  apiKey: '<YOUR API KEY>',
+  authDomain: '<YOUR AUTH DOMAIN>',
+  databaseURL: '<YOUR DB URL>',
+  projectId: '<YOUR PROJECT ID>',
+  storageBucket: '<YOUR STORAGE BUCKET>',
+  messagingSenderId: '<YOUR SENDER ID>',
+  appId: '<YOUR APP ID>',
+};
+```
+
+Then, create a box in your firebase Realtime Database:
+
+In the `boxes` object, create an object named `<YOUR BOX ID>`
+This object has two properties:
+
+- Message: The string that will be displayed on the box.
+- password: The SHA-512 hash of the box's password.
+
+i.e., your databse will look like this in JSON:
+
+```
+{
+  boxes: {
+    test-box-1: {
+      message: 'Hi!'
+      password: 'ed54a91cbbc3f6d63e9c9fe5eccc1f7ef8b4951abeeb158a51130445f9905695788d7e6ccba5fa4b460aef79487802f11372ec666fe6f45c713ddf84cd1cad1c'
+    },
+    test-box-2: {
+      message: 'Hello my friend!'
+      password: 'a426abca24a6f0cc4fab6ccef78285d5c13b995d78c108faaad9e674b57eec987dc4012a66a9c5cefdf01d206cd6436033957981df217168c58ab6278862d4ca'
+    }
+  }
+}
+```
 
 ## Getting Started with Create React App
 
