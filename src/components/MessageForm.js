@@ -41,84 +41,74 @@ const MessageForm = () => {
   };
 
   return (
-    <div className={classes.container}>
-      <Container>
-        <Typography variant='h1' gutterBottom>
-          {'Lovebox <3'}
-        </Typography>
-        <Typography variant='h5' gutterBottom>
-          {'Connect to the lovebox and send a lovely message'}
-        </Typography>
-        <Paper elevation={1} className={classes.formPaper}>
-          <form
-            className={classes.form}
-            noValidate
-            autoComplete='off'
-            onSubmit={handleSubmit(onSubmit)}
+    <Paper elevation={1} className={classes.formPaper}>
+      <form
+        className={classes.form}
+        noValidate
+        autoComplete='off'
+        onSubmit={handleSubmit(onSubmit)}
+      >
+        <Grid item={true} xs={12}>
+          <Controller
+            name='id'
+            control={control}
+            defaultValue={''}
+            rules={{ required: true }}
+            render={({ field }) => (
+              <TextField
+                className={classes.formField}
+                label='Lovebox ID'
+                {...field}
+                error={errors.id?.type === 'required'}
+              />
+            )}
+          />
+        </Grid>
+        <Grid item={true} xs={12}>
+          <Controller
+            name='password'
+            control={control}
+            defaultValue={''}
+            rules={{ required: true }}
+            render={({ field }) => (
+              <TextField
+                className={classes.formField}
+                label='Password'
+                type='password'
+                {...field}
+                error={errors.password?.type === 'required'}
+              />
+            )}
+          />
+        </Grid>
+        <Grid item={true} xs={12}>
+          <Controller
+            name='message'
+            control={control}
+            defaultValue={''}
+            rules={{ required: true }}
+            render={({ field }) => (
+              <TextField
+                className={classes.formField}
+                label='Message'
+                {...field}
+                error={errors.message?.type === 'required'}
+              />
+            )}
+          />
+        </Grid>
+        <Grid item={true} xs={12}>
+          <Button
+            className={classes.sumbitBtn}
+            variant='contained'
+            color='secondary'
+            type='submit'
           >
-            <Grid item={true} xs={12}>
-              <Controller
-                name='id'
-                control={control}
-                defaultValue={''}
-                rules={{ required: true }}
-                render={({ field }) => (
-                  <TextField
-                    className={classes.formField}
-                    label='Lovebox ID'
-                    {...field}
-                    error={errors.id?.type === 'required'}
-                  />
-                )}
-              />
-            </Grid>
-            <Grid item={true} xs={12}>
-              <Controller
-                name='password'
-                control={control}
-                defaultValue={''}
-                rules={{ required: true }}
-                render={({ field }) => (
-                  <TextField
-                    className={classes.formField}
-                    label='Password'
-                    type='password'
-                    {...field}
-                    error={errors.password?.type === 'required'}
-                  />
-                )}
-              />
-            </Grid>
-            <Grid item={true} xs={12}>
-              <Controller
-                name='message'
-                control={control}
-                defaultValue={''}
-                rules={{ required: true }}
-                render={({ field }) => (
-                  <TextField
-                    className={classes.formField}
-                    label='Message'
-                    {...field}
-                    error={errors.message?.type === 'required'}
-                  />
-                )}
-              />
-            </Grid>
-            <Grid item={true} xs={12}>
-              <Button
-                className={classes.sumbitBtn}
-                variant='contained'
-                color='secondary'
-                type='submit'
-              >
-                Submit
-              </Button>
-            </Grid>
-          </form>
-        </Paper>
-      </Container>
-    </div>
+            Submit
+          </Button>
+        </Grid>
+      </form>
+    </Paper>
   );
 };
 
