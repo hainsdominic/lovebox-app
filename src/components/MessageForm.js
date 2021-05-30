@@ -2,14 +2,7 @@ import React from 'react';
 import sha512 from 'js-sha512';
 
 import { useForm, Controller } from 'react-hook-form';
-import {
-  Container,
-  Typography,
-  TextField,
-  Grid,
-  Button,
-  Paper,
-} from '@material-ui/core';
+import { TextField, Grid, Button, Paper } from '@material-ui/core';
 
 import useStyles from '../styles';
 import { db } from '../config/firebase';
