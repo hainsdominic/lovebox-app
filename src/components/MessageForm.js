@@ -8,6 +8,7 @@ import {
   TextField,
   Grid,
   Button,
+  Paper,
 } from '@material-ui/core';
 
 import useStyles from '../styles';
@@ -48,72 +49,74 @@ const MessageForm = () => {
         <Typography variant='h5' gutterBottom>
           {'Connect to the lovebox and send a lovely message'}
         </Typography>
-        <form
-          className={classes.form}
-          noValidate
-          autoComplete='off'
-          onSubmit={handleSubmit(onSubmit)}
-        >
-          <Grid item={true} xs={12}>
-            <Controller
-              name='id'
-              control={control}
-              defaultValue={''}
-              rules={{ required: true }}
-              render={({ field }) => (
-                <TextField
-                  className={classes.formField}
-                  label='Lovebox ID'
-                  {...field}
-                  error={errors.id?.type === 'required'}
-                />
-              )}
-            />
-          </Grid>
-          <Grid item={true} xs={12}>
-            <Controller
-              name='password'
-              control={control}
-              defaultValue={''}
-              rules={{ required: true }}
-              render={({ field }) => (
-                <TextField
-                  className={classes.formField}
-                  label='Password'
-                  type='password'
-                  {...field}
-                  error={errors.password?.type === 'required'}
-                />
-              )}
-            />
-          </Grid>
-          <Grid item={true} xs={12}>
-            <Controller
-              name='message'
-              control={control}
-              defaultValue={''}
-              rules={{ required: true }}
-              render={({ field }) => (
-                <TextField
-                  className={classes.formField}
-                  label='Message'
-                  {...field}
-                  error={errors.message?.type === 'required'}
-                />
-              )}
-            />
-          </Grid>
-          <Grid item={true} xs={12}>
-            <Button
-              className={classes.sumbitBtn}
-              variant='contained'
-              color='secondary'
-              type='submit'
-            >
-              Submit
-            </Button>
-          </Grid>
-        </form>
+        <Paper elevation={1} className={classes.formPaper}>
+          <form
+            className={classes.form}
+            noValidate
+            autoComplete='off'
+            onSubmit={handleSubmit(onSubmit)}
+          >
+            <Grid item={true} xs={12}>
+              <Controller
+                name='id'
+                control={control}
+                defaultValue={''}
+                rules={{ required: true }}
+                render={({ field }) => (
+                  <TextField
+                    className={classes.formField}
+                    label='Lovebox ID'
+                    {...field}
+                    error={errors.id?.type === 'required'}
+                  />
+                )}
+              />
+            </Grid>
+            <Grid item={true} xs={12}>
+              <Controller
+                name='password'
+                control={control}
+                defaultValue={''}
+                rules={{ required: true }}
+                render={({ field }) => (
+                  <TextField
+                    className={classes.formField}
+                    label='Password'
+                    type='password'
+                    {...field}
+                    error={errors.password?.type === 'required'}
+                  />
+                )}
+              />
+            </Grid>
+            <Grid item={true} xs={12}>
+              <Controller
+                name='message'
+                control={control}
+                defaultValue={''}
+                rules={{ required: true }}
+                render={({ field }) => (
+                  <TextField
+                    className={classes.formField}
+                    label='Message'
+                    {...field}
+                    error={errors.message?.type === 'required'}
+                  />
+                )}
+              />
+            </Grid>
+            <Grid item={true} xs={12}>
+              <Button
+                className={classes.sumbitBtn}
+                variant='contained'
+                color='secondary'
+                type='submit'
+              >
+                Submit
+              </Button>
+            </Grid>
+          </form>
+        </Paper>
       </Container>
     </div>
   );

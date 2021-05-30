@@ -2,7 +2,7 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
   container: {
-    margin: theme.spacing(10, 'auto'),
+    margin: theme.spacing(10),
     textAlign: 'center',
   },
   form: {
@@ -13,6 +13,11 @@ const useStyles = makeStyles((theme) => ({
   },
   sumbitBtn: {
     margin: theme.spacing(2),
+  },
+  formPaper: {
+    margin: theme.spacing(7, 'auto'),
+    padding: theme.spacing(2),
+    width: theme.spacing(50),
   },
 }));
 
